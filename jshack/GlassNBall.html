@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>game</title>
+	<style type="text/css">
+		#container{
+			margin-top: 100px;
+			background-color: #999999;
+			height: 600px;
+		}
+
+		.glass{
+			position: absolute;
+			top:200px;
+		}
+		#ball{
+			position: relative;
+			top:425px;
+			left:775px;
+			max-width: 50px;
+			max-height: 50px;
+		}
+	</style>
+	<script
+  src="https://code.jquery.com/jquery-3.3.1.js"
+  integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+  crossorigin="anonymous"></script>
+</head>
+<body background="bg.jpg">
+
+	<img src="Thimblerig.png" class="glass" onclick="check1()">
+	<img src="Thimblerig.png" class="glass" onclick="check2()">
+	<img src="Thimblerig.png" class="glass" onclick="check3()">
+	<img src="ball.png" id="ball">
+	<br><br>
+	<center><button onclick="play()">START</button><button onclick="playagain()">PLAY AGAIN</button></center>
+	<script type="text/javascript">
+
+
+		var glass=document.getElementsByClassName('glass');
+		glass[1].style.top=100+"px";
+		glass[0].style.left=400+"px";
+		glass[1].style.left=700+"px";
+		glass[2].style.left=1000+"px";
+
+
+
+		var t = 0;
+		var i;
+		var j;
+		var c=0;
+		var xcenter = 550;
+		var r= 150;
+     // center X position
+    var ycenter = 200;
+
+function moveit(i,j) {
+    t += 0.05;
+
+      // radius
+       // center Y position
+
+    var inewLeft = Math.floor(xcenter - (r * Math.cos(t)));
+    var jnewLeft = Math.floor(xcenter + (r * Math.cos(t)));
+    var inewTop = Math.floor(ycenter - (r * Math.sin(t)));
+    var jnewTop = Math.floor(ycenter + (r * Math.sin(t)));
+
+    $(".glass").eq(i).animate({
+        top: inewTop,
+        left: inewLeft,
+    }, 1);
+    $(".glass").eq(j).animate({
+        top: jnewTop,
+        left: jnewLeft,
+    }, 1,function() {
+    	if(t>Math.PI && c<5){
+    		c++;
+    		t=0.05;
+    		do{
+    		i=Math.floor(Math.random()*3);
+			j=Math.floor(Math.random()*3);
+		}while(i>=j);
+        	r= ((parseFloat($(".glass").eq(j).css('left'))-parseFloat($(".glass").eq(i).css('left')))/2) ;
+        	xcenter = (parseFloat($(".glass").eq(i).css('left'))+parseFloat($(".glass").eq(j).css('left')))/2;
+      		console.log(i,j);
+        	moveit(i,j);
+    }else if(t<Math.PI) moveit(i,j);
+
+	});
+}
+
+function play(){
+	glass[1].style.top=100+"px";
+	$("#ball").remove();
+	xcenter = 550;
+	r= 150;
+     // center X position
+    ycenter = 200;
+	t=0;
+	c=0;
+	glass[0].style.left=400+"px";
+		glass[1].style.left=700+"px";
+		glass[2].style.left=1000+"px";
+    moveit(0,1);
+};
+
+function check1(){
+	alert("You Lose");
+}
+function check2(){
+	alert("You Win");
+}
+function check3(){
+	alert("You Lose");
+}
+
+function playagain(){
+	location.reload();
+}
+
+
+	</script>
+
+</body>
+</html>
