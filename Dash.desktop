@@ -1,0 +1,8 @@
+[Desktop Entry]
+Name=Dash
+GenericName=Open Ubuntu Dash
+Exec=xdotool key super
+Terminal=false
+Type=Application
+Icon=/usr/share/unity/icons/launcher_bfb.png
+StartupNotify=false
