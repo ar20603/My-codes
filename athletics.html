@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <link rel="stylesheet" type="text/css" href="main.css">
+
+    <title>Athletics</title>
+  </head>
+  <body>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+    <!-- For span buttons -->
+    
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script> -->
+    <!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script> -->
+
+
+    <div class="container eventDetails">
+    	<div class="eventDate">
+    		<span>Thu, 7th July</span>
+    	</div>
+  		<div class="row event " id="accordion1">
+    		<div class="col-lg-3">
+      			<span>Event Time<span>
+      				<br />
+      			<span>Event Place</span>
+    		</div>
+    		<div class="col-lg-6 eventName">
+     			 <span>Event Name</span>
+    		</div>
+    		<div class="col-lg-3">
+    			<div class="playerLink">
+      				<a data-toggle="collapse" data-parent="#accordion1" href="#collapse1">Start List<span class="glyphicon glyphicon-menu-down" aria-hidden="true"></span></a>
+      			</div>
+    		</div>
+    		<div id="collapse1" class="panel-collapse collapse in playerList">
+	        	<h2>Players</h2>
+	        	<div class="eventPlayers">
+	        		<ul>
+	        			<li>Manan</li>
+	        			<li>Mayank</li>
+	        			<li>Ravi</li>
+	        			<li>Anubhav</li>
+	        		</ul>
+	        	</div>
+	      	</div>
+  		</div>
+  		<hr>
+
+  		<div class="row event " id="accordion2">
+    		<div class="col-lg-3">
+      			<span>Event Time<span>
+      				<br />
+      			<span>Event Place</span>
+    		</div>
+    		<div class="col-lg-6 eventName">
+     			 <span>Event Name</span>
+    		</div>
+    		<div class="col-lg-3">
+      			<div class="playerLink">
+      				<a data-toggle="collapse" data-parent="#accordion1" href="#collapse2">Start List<span class="glyphicon glyphicon-menu-down" aria-hidden="true"></span></a>
+      			</div>
+    		</div>
+    		<div id="collapse2" class="panel-collapse collapse in playerList">
+    			<h2>Players</h2>
+	        	<div class="eventPlayers">
+	        		<ul>
+	        			<li>Mona</li>
+	        			<li>Mayank</li>
+	        			<li>Aman</li>
+	        			<li>Anubhav</li>
+	        		</ul>
+	        	</div>
+	      	</div>
+  		</div>
+	</div>
+  </body>
+</html>
